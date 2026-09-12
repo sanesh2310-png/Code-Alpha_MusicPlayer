@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player — CodeAlpha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="console">
+
+  <section class="deck">
+    <div class="platter" id="platter">
+      <div class="record">
+        <div class="record-grooves"></div>
+        <div class="label" id="label">
+          <span id="labelInitials">NR</span>
+        </div>
+      </div>
+      <div class="tonearm" id="tonearm"></div>
+    </div>
+
+    <div class="deck-info">
+      <div class="track-meta">
+        <h1 class="track-title" id="trackTitle">—</h1>
+        <p class="track-artist" id="trackArtist">—</p>
+      </div>
+
+      <div class="progress-row">
+        <span class="time" id="currentTime">0:00</span>
+        <input type="range" id="seek" class="seek" min="0" max="100" value="0" step="0.1">
+        <span class="time" id="duration">0:00</span>
+      </div>
+
+      <div class="controls-row">
+        <div class="transport">
+          <button id="prevBtn" class="transport-btn" aria-label="Previous track">
+            <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6L18 6v12z"/></svg>
+          </button>
+          <button id="playBtn" class="transport-btn play" aria-label="Play">
+            <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <button id="nextBtn" class="transport-btn" aria-label="Next track">
+            <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+          </button>
+        </div>
+
+        <div class="volume">
+          <button id="muteBtn" class="mute-btn" aria-label="Mute">
+            <svg id="volIcon" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+          </button>
+          <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="70">
+        </div>
+
+        <button id="autoplayBtn" class="toggle-btn active" aria-pressed="true" title="Autoplay next track">
+          auto
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="playlist-panel">
+    <div class="playlist-header">
+      <span>Playlist</span>
+      <span class="playlist-count" id="playlistCount">0 tracks</span>
+    </div>
+    <ul class="playlist" id="playlist"></ul>
+    <p class="hint" id="audioHint"></p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
